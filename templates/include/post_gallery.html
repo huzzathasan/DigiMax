@@ -1,0 +1,39 @@
+<div class="container-fluid px-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="section_title"><span>Random Post</span><span><div class="btn btn-sm btn-info">See More</div></span></div>
+            {% for random_post in random_posts %}
+            <div class="row post">
+                <div class="col-4"><img src="/media/{{random_post.img}}" alt="" width="100%" height="100%" style="object-fit: cover;"></div>
+                <div class="col-8 d-flex flex-column">
+                    <strong><a href="{% url "full_post" random_post.url %}">{{random_post.title}}</a></strong>
+                    <code><i class="fa fa-user"></i> {{random_post.author}} <i class="fa fa-clock"></i> {{random_post.pub_date}}</code>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <div class="section_title"><span>Feature Post</span><span><div class="btn btn-sm btn-info">See More</div></span></div>
+            <div class="row">
+                <div class="col-12"><img src="/media/{{feature_post.img}}" alt="" width="100%" height="170px" style="object-fit: cover;"></div>
+                <div class="col-12 d-flex flex-column">
+                    <strong><a href="">{{feature_post.title}}</a> </strong>
+                    <code><i class="fa fa-user"></i> {{feature_post.author}} <i class="fa fa-clock"></i> {{feature_post.pub_date}} </code>
+                    <p class="post_snippet">{{feature_post.content|safe|truncatechars:150}}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="section_title"><span>Popular Post</span><span><div class="btn btn-sm btn-info">See More</div></span></div>
+            {% for popular_post in popular_posts %}
+            <div class="row post">
+                <div class="col-4"><img src="/media/{{popular_post.img}}" alt="" width="100%" height="100%" style="object-fit: cover;"></div>
+                <div class="col-8 d-flex flex-column">
+                    <strong><a href="{% url "full_post" popular_post.url %}">{{popular_post.title}}</a></strong>
+                    <code><i class="fa fa-user"></i> {{popular_post.author}} <i class="fa fa-clock"></i>{{popular_post.pub_date}} </code>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

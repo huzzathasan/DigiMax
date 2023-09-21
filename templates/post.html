@@ -1,0 +1,74 @@
+{% extends "./layout/base_full_post.html" %}
+
+{% block title %}Post Title{% endblock title %}
+
+{% block left_side %}
+   
+<div class="col-md-8">
+    <div class="card">
+        <div class="card-header">home/post/{{full_post.title|truncatechars:12}}</div>
+        <div class="card-title post">
+            <h1 class="_post_title">{{full_post.title}}</h1>
+            <div class="post_meta">
+                <code>
+                    <i class="fa fa-user"></i> {{full_post.author}}
+                    <i class="fa fa-clock"></i> {{full_post.pub_date}}
+                    <i class="fa fa-table-cells"></i> {{full_post.category}}
+                </code>
+            </div>
+        </div>
+        <div class="card-img px-1"><img src="/media/{{full_post.img}}" alt="" width="100%" height="100%"></div>
+        <div class="card-body post_body">
+            <p>{{full_post.content}}</p>
+        </div>
+        <div class="container-fluid post_bottom_ads bg-body-tertiary p-1 my-1">Responsive Ads</div>
+        <div class="tag tag_wrapper">
+            <a href="#">Codeing</a>
+            <a href="#">Health</a>
+            <a href="#">Html</a>
+        </div>
+        <div class="card-footer d-flex align-items-center justify-content-start list-unstyled column-gap-1 p-3">
+            <li><a href="#" class="bg-fb p-2"><i class="fab fa-facebook"></i> Share</a></li>
+            <li class="bg-tw"><a href="#" class="bg-tw p-2"><i class="fab fa-twitter"></i> Twitte</a></li>
+            <li class="bg-wa"><a href="#" class="p-2 bg-tel"><i class="fab fa-telegram-plane"></i> Message</a></li>
+            <li class="bg-body-tertiary"><a href="#" class="p-2 bg-mail"><i class="fas fa-envelope"></i> Mail</a></li>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="post_navigation d-flex align-items-center justify-content-between">
+            <a href="#" class="previeous_post text-start">
+                <i class="fa fa-arrow-circle-left"></i> OLDER
+                <p class="">Lorem ipsum dolor sit amet.</p>
+            </a>
+            <a href="#" class="next_post text-end">
+                NEWER <i class="fa fa-arrow-circle-right"></i>
+                <p class="">Lorem ipsum dolor sit amet.</p>
+            </a>
+        </div>
+    </div>
+    <!-- Suggesst post -->
+        <div class="card mt-5">
+            <div class="card-header d-flex align-items-center justify-content-between"><span>Also Like You</span> <span><i class="fa fa-chevron-left"></i>&ThinSpace;<i class="fa fa-chevron-right"></i></span></div>
+            <div class="card-body">
+                <div class="row">
+                {% for suggestion_post in suggestion_posts %}
+                    <div class="col-sm-4">
+                        <img src="/media/{{suggestion_post.img}}" alt="" width="100%" height="170px">
+                        <h2 class="post_title"><a href="{% url "full_post" suggestion_post.url %}">{{suggestion_post.title}}</a></h2>
+                        <p class="post_meta">
+                            <code><i class="fa fa-user"></i> {{suggestion_post.author}} <i class="fa fa-clock"></i>{{suggestion_post.pub_date}} </code>
+                        </p>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    <div class="card mt-5">
+        <div class="card-header d-flex justify-content-between"><span>Post Comment</span> <code><i class="fa fa-comment"></i> 3k People</code></div>
+        <div class="card-body">
+            
+        </div>
+    </div>
+
+</div>
+{% endblock left_side %}

@@ -1,0 +1,146 @@
+<div class="progress">
+    <div class="progress_value">
+        <!-- &uparrow; -->
+        <i class="fa fa-chevron-up"></i>
+        <i style="font-size: 14px; margin-top: -20px; font-style: normal;" class="present"></i>
+    </div>
+</div>
+<header>
+    <div class="top_header">
+        <div class="top_header_wrapper">
+            <div class="to_left">
+                <a href="/">Home</a>
+                <a href="/">About</a>
+                <a href="/">Contact</a>
+                <a href="/">Service</a>
+                <a href="/admin">Admin</a>
+            </div>
+            <div class="top_right">
+                <a href="https://www.facebook.com/huzzat77"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-vimeo"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_header">
+        <div class="bottom_header_wrapper">
+            <div class="bottom_left">
+                <a href="/" style="font-size: 28px;">DIGIMAX</a>
+                <a href="/post">Feature</a>
+                <a href="/post">News</a>
+                <a href="/post">Documentation</a>
+                <a href="/post">Reel</a>
+                <a href="/post">Sport's</a>
+                <a href="/post">Tech.</a>
+                <a href="/post">Science</a>
+                <a href="/post">Android</a>
+                <a href="/post">IOS</a>
+                <a href="/post">PC</a>
+            </div>
+            <div class="bottom_right">
+                <button class="search_btn" onclick="popup()"><i class="fa fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile_header">
+        <div class="mobile_header_wrapper">
+            <div class="logo"><a href="#">DIGIMAX</a></div>
+            <div class="toggler">
+                <button class="search_btn" onclick="popup()"><i class="fa fa-magnifying-glass"></i></button>
+                <button class="toggler_btn">&#9776</button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="offcanvas_header">
+    <div class="offcanvas_wrapper">
+        <div class="offcanvas_container">
+            <div class="offcanvas_head">
+                <div class="logo"><a href="#">DIGIMAX</a></div>
+                <div class="close_btn">&times;</div>
+            </div>
+            <div class="offcanvas_content">
+                <li><a href="#">Home</i></a></li>
+                <li>
+                    <div class="dropdown" onclick="dropdown(0)">
+                        <span>News</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="dropdown_content">
+                        <li><a href="#">dropdown 1</a></li>
+                        <li><a href="#">dropdown 2</a></li>
+                        <li><a href="#">dropdown 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="dropdown" onclick="dropdown(1)">
+                        <span>Reel</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="dropdown_content">
+                        <li><a href="#">dropdown 1</a></li>
+                        <li><a href="#">dropdown 2</a></li>
+                        <li><a href="#">dropdown 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="dropdown" onclick="dropdown(2)">
+                        <span>Sport's</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="dropdown_content">
+                        <li><a href="#">dropdown 1</a></li>
+                        <li><a href="#">dropdown 2</a></li>
+                        <li><a href="#">dropdown 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="dropdown" onclick="dropdown(3)">
+                        <span>Tech.</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="dropdown_content">
+                        <li><a href="#">dropdown 1</a></li>
+                        <li><a href="#">dropdown 2</a></li>
+                        <li><a href="#">dropdown 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="dropdown" onclick="dropdown(4)">
+                        <span>Science</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="dropdown_content">
+                        <li><a href="#">dropdown 1</a></li>
+                        <li><a href="#">dropdown 2</a></li>
+                        <li><a href="#">dropdown 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="dropdown" onclick="dropdown(5)">
+                        <span>Travel</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="dropdown_content">
+                        <li><a href="#">dropdown 1</a></li>
+                        <li><a href="#">dropdown 2</a></li>
+                        <li><a href="#">dropdown 3</a></li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup_search">
+    <div class="popup_search_box">
+        <div class="popup_close_btn" onclick="popupClose()"><i class="fa fa-close"></i></div>
+        <div class="popup_search_content">
+            <input type="search" name="search" id="search_bar" placeholder="Type Here Your Search">
+            <button class="search_btn"><i class="fa fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+</div>
+{% comment %} {% include "./search.html" %} {% endcomment %}

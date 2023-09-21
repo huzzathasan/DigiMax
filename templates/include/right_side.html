@@ -1,0 +1,74 @@
+
+<div class="col-md-4 mt-2">
+    <div class="card mb-4">
+        <div class="card-header">Social Plugin</div>
+        <div class="card-body">
+            <div class="social_link">
+                <a href="#" class="bg-fb p-3"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#" class="bg-in p-3"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" class="bg-tw p-3"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="#" class="bg-vk p-3"><i class="fab fa-vk fa-2x"></i></a>
+                <a href="#" class="bg-pin p-3"><i class="fab fa-pinterest fa-2x"></i></a>
+                <a href="#" class="bg-lin p-3"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#" class="bg-yt p-3"><i class="fab fa-youtube fa-2x"></i></a>
+                <a href="#" class="bg-tel p-3"><i class="fab fa-telegram fa-2x"></i></a>
+                <a href="#" class="bg-git p-3"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#" class="bg-wa p-3"><i class="fab fa-whatsapp fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+            Subscribe Us
+        </div>
+        <div class="card-body">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HBE4K1Xu9us?si=NhEU4KSSHhvygmy8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">Most Popular Post</div>
+        <div class="card-body">
+            {% for popular_post in popular_posts %}
+            <div class="row post">
+                <div class="col-4"><img src="/media/{{popular_post.img}}" alt="" width="100%" height="100%" style="overflow: hidden; object-fit: cover;"></div>
+                <div class="col-8 d-flex flex-column">
+                    <strong><a href="{% url "full_post" popular_post.url %}">{{popular_post.title}}</a></strong>
+                    <code><i class="fa fa-clock"></i> {{popular_post.pub_date}} </code>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+            Join Facebook
+        </div>
+        <div class="card-body">
+            
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+            Tag's
+        </div>
+        <div class="card-body tag">
+            <a href="#">Tag0</a>
+            <a href="#">Tag1</a>
+            <a href="#">Tag2</a>
+            <a href="#">Tag3</a>
+            <a href="#">Tag4</a>
+            <a href="#">Tag5</a>
+            <a href="#">Tag6</a>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">Category</div>
+        <div class="card-body">
+            <ul class="category list-unstyled">
+                {% for category in categories %}
+                <li class="d-flex align-items-center justify-content-between p-2 "><span>{{category.title}}</span><span><i class="fa fa-chevron-down"></i></span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{% load static %}
+    <div class="container-md mt-3">
+            <div class="row">
+                <div class="col-sm-8 hot_post_wrapper">
+                    <div class="hot_post_img">
+                        <img src="/media/{{hot_post.img}}" alt="" width="100%" height="400px">
+                    </div>
+                    <div class="hot_post_text">
+                        <span>{{hot_post.category}}</span>
+                        <h3><a href="{% url "full_post" hot_post.url %}" class='text-white'>{{hot_post.title}}</a></h3>
+                        <code><i class="fa fa-user"></i> {{hot_post.author}} <i class="fa fa-clock-rotate-left"></i> {{hot_post.pub_date}}</code>
+                        <p class="post_snippet">{{hot_post.content|safe|truncatechars:200}}</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 bg-body-tertiary d-flex flex-column justify-content-between">
+                    {% for hero_post_list in hero_post_lists %}
+                    <div class="row">
+                        <strong>{{hero_post_list.category}}</strong>
+                        <a href="#"><strong><a href="{% url "full_post" hero_post_list.url %}">{{hero_post_list.title}}</a> </strong></a>
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
